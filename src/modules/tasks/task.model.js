@@ -38,11 +38,11 @@ const taskSchema = new mongoose.Schema(
     userId: {
       type: Number,
       required: true,
-      index: true, // index this field — we query by it on every request
+      index: true,
     },
   },
   {
-    timestamps: true, // auto adds createdAt and updatedAt
+    timestamps: true, 
   }
 );
 

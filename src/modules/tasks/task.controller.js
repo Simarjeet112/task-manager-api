@@ -2,7 +2,7 @@ const catchAsync = require('../../utils/catchAsync');
 const taskService = require('./task.service');
 
 exports.createTask = catchAsync(async (req, res) => {
-  // req.user.id comes from auth middleware — never trust req.body for ownership
+  
   const task = await taskService.createTask(req.body, req.user.id);
 
   res.status(201).json({
@@ -42,7 +42,7 @@ exports.updateTask = catchAsync(async (req, res) => {
 exports.deleteTask = catchAsync(async (req, res) => {
   await taskService.deleteTask(req.params.id, req.user.id);
 
-  // 204 = success with no content — standard for DELETE
+  
   res.status(204).json({
     status: 'success',
     data: null,
