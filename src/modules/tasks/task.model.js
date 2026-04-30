@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-// The userId field is the ownership mechanism.
-// Every task stores which user created it.
-// We use Number type to match PostgreSQL's integer id.
 const taskSchema = new mongoose.Schema(
   {
     title: {
@@ -40,9 +37,25 @@ const taskSchema = new mongoose.Schema(
       required: true,
       index: true,
     },
+  
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Category',
+      default: null,
+    },
+
+    tags: {
+      type: [String],
+      default: [],
+    },
+    
+    reminderScheduled: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
-    timestamps: true, 
+    timestamps: true,
   }
 );
 

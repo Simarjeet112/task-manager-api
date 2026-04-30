@@ -8,6 +8,7 @@ const authRoutes = require('./modules/auth/auth.routes');
 const userRoutes = require('./modules/users/user.routes');
 const taskRoutes = require('./modules/tasks/task.routes');
 const AppError = require('./utils/AppError');
+const categoryRoutes = require('./modules/categories/category.routes');
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use('/api/categories', categoryRoutes);
 
 
 app.all('*splat', (req, res, next) => {

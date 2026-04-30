@@ -1,7 +1,10 @@
-require('dotenv').config(); 
+require('dotenv').config();
 const app = require('./app');
 const connectMongo = require('./config/db.mongo');
-require('./config/db.postgres'); 
+require('./config/db.postgres');
+
+// Start the reminder worker — listens to Redis queue
+require('./queues/reminder.worker');
 
 const PORT = process.env.PORT || 3000;
 
