@@ -233,3 +233,7 @@ When a task status changes to `completed`, a POST request goes out to whatever U
 - Refresh token support
 - Proper test coverage
 - Real email notifications instead of webhook simulation
+
+## Demo Video
+
+[Watch Assignment Demo](https://youtu.be/tzvu6z5CQy4?si=k0zbxMX9Jl-1hD3Z)
